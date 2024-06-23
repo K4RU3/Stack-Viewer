@@ -85,7 +85,7 @@ Q("#search").addEventListener("click", ()=>{
 		query += "&" + mode + "=" + amount
 	}
 	localStorage.setItem("username", name)
-	window.location.href = "/view" + query
+	window.location.href = window.location.href + "/view" + query
 })
 
 async function api(query){
