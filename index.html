@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="babble.css">
+	<title>Stack viewer</title>
+</head>
+<body>
+	<div id="background">
+		<h1 id="title">Stack Viewer</h1>
+		<div id="content">
+			<p>username</p>
+			<input id="username" placeholder="Enter username" autocomplete="off"></input>
+			<div id="season">
+				<p>season</p>
+				<div id="seasonSelector">latest</div>
+				<div id="seasonList"><div>latest</div></div>
+			</div>
+			<div id="mode">
+				<p>manage mode</p>
+				<div id="modeSelector">view</div>
+				<div id="modeList">
+					<div>view</div>
+					<div>add</div>
+					<div>set</div>
+				</div>
+				<input type="number" id="calcVal" placeholder="Enter amount" class="disable">
+			</div>
+			<button id="search">go View!</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

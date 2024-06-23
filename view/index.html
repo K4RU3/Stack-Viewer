@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../babble.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+</head>
+<body>
+    <div class="loader"></div>
+    <div id="main"class="disable">
+        <div class="panel" id="overview">
+            <div class="stack">
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 1200">
+                <defs>
+                    <style>
+                    .cls-1 {
+                        stroke: #231815;
+                        stroke-miterlimit: 10;
+                        stroke-width: 2px;
+                    }
+
+                    .cls-1, .cls-2 {
+                        fill: #f7f8f8;
+                    }
+
+                    .cls-2, .cls-3 {
+                        stroke-width: 0px;
+                    }
+
+                    .cls-3 {
+                        fill: #3e3a39;
+                    }
+
+                    .cls-4 {
+                        fill: #efefef;
+                        font-family: HiraKakuStd-W8, 'HiraKakuStd W8';
+                        font-size: 150px;
+                    }
+                    </style>
+                </defs>
+                <path id="outer" class="cls-1" d="M600,150c-248.5,0-450,201.5-450,450s201.5,450,450,450,450-201.5,450-450-201.5-450-450-450ZM600,925c-179.5,0-325-145.5-325-325s145.5-325,325-325,325,145.5,325,325-145.5,325-325,325Z"/>
+                <circle class="cls-3" cx="600" cy="600" r="325"/>
+                <path id="circle" class="cls-2" d="M600,275c-179.5,0-325,145.5-325,325s145.5,325,325,325,325-145.5,325-325-145.5-325-325-325ZM600,920c-176.7,0-320-143.3-320-320s143.3-320,320-320,320,143.3,320,320-143.3,320-320,320Z"/>
+                <path id="top" class="cls-3" d="M485.9,164.6l15.9,125.5c31-9.8,63.9-15.1,98.2-15.1s67.2,5.3,98.2,15.1l15.9-125.5c-36.4-9.5-74.7-14.6-114.1-14.6s-77.7,5.1-114.1,14.6Z"/>
+                <path id="right" class="cls-3" d="M1035.4,714.1c9.5-36.4,14.6-74.7,14.6-114.1s-5.1-77.7-14.6-114.1l-125.5,15.9c9.8,31,15.1,63.9,15.1,98.2s-5.3,67.2-15.1,98.2l125.5,15.9Z"/>
+                <path id="bottom" class="cls-3" d="M714.1,1035.4l-15.9-125.5c-31,9.8-63.9,15.1-98.2,15.1s-67.2-5.3-98.2-15.1l-15.9,125.5c36.4,9.5,74.7,14.6,114.1,14.6s77.7-5.1,114.1-14.6Z"/>
+                <path id="left" class="cls-3" d="M275,600c0-34.2,5.3-67.2,15.1-98.2l-125.5-15.9c-9.5,36.4-14.6,74.7-14.6,114.1s5.1,77.7,14.6,114.1l125.5-15.9c-9.8-31-15.1-63.9-15.1-98.2Z"/>
+                <text id="num" class="cls-4" transform="translate(600 640)" style="font-size: 10px;"><tspan x="0" y="0" text-anchor="middle" dominant-baseline="middle">0$</tspan></text>
+                </svg>
+            </div>
+            <div class="summary">
+                <h1 id="average">Average</h1>
+                <h2 id="averageValue">50</h2>
+                <h3 id="median">median:10</h3>
+                <h3 id="max">max:10</h3>
+                <h3 id="min">min:10</h3>
+            </div>
+            <div class="chart">
+                <canvas id="chartCanvas"></canvas>
+            </div>
+            <div class="rate">
+                <p>前回からの増加率</p>
+                <h1 id="rateValue"></h1>
+            </div>
+            <div class="rank">
+                <p>現在の順位</p>
+                <h1 id="rank"></h1>
+            </div>
+          </div>
+        <div class="panel" id="detal">
+            <div class="ranking">
+                <canvas id="rankingCanvas"></canvas>
+            </div>
+            <div class="ratio">
+                <canvas id="ratioCanvas"></canvas>
+            </div>
+          </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>

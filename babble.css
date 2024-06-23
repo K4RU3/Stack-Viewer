@@ -1,0 +1,7 @@
+.bubble{
+	position: fixed;
+	transition: opacity 1s linear, border-radius 1s linear, bottom 10s linear;
+	background: none;
+	border: gray 1px solid;
+	filter: drop-shadow(0 0 3px white);
+}

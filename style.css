@@ -1,0 +1,197 @@
+:root{
+	--background: linear-gradient(225deg, #4E5151, #161717);
+	--text: #F2F7FA;
+	--emphasis: #E74C3C;
+	--accent: #27AE60;
+}
+
+@font-face {
+	font-family: "mamelon";
+	src: url("Mamelon.otf") format("opentype");
+}
+
+html, body{
+	margin: 0;
+	user-select: none;
+	font-family: mamelon;
+}
+
+#background{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--background);
+	color: var(--text);
+	text-align: center;
+}
+
+#title{
+	font-size: 3rem;
+	margin: 10%;
+}
+
+#content{
+	position: absolute;
+	top: 30%;
+}
+
+#username{
+	font-size: 1.2rem;
+	width: 60%;
+	background: none;
+	text-align: center;
+	outline: none;
+	color: var(--text);
+	border: none;
+	border-bottom: var(--text) solid 1px;
+	padding-bottom: 2%;
+}
+#username:focus::placeholder{
+	color: transparent;
+}
+#username.shake{
+	animation: error ease 0.1s;
+}
+@keyframes error {
+	0%{
+		transform: translateX(5px);
+	}
+	20%{
+		transform: translateX(-5px);
+	}
+	40%{
+		transform: translateX(10px);
+	}
+	60%{
+		transform: translateX(-10px);
+	}
+	80%{
+		transform: translateX(5px);
+	}
+	100%{
+		transform: translateX(-5px);
+	}
+}
+
+#season, #mode{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5%;
+}
+
+p{
+	font-size: 0.7rem;
+}
+
+#seasonSelector{
+	width: 60%;
+}
+#seasonSelector::after{
+	content: "→";
+	position: absolute;
+	right: 25%;
+	transition: transform 0.2s ease;
+}
+#seasonSelector.loading::after{
+	content: '.';
+	animation: load 1s ease infinite;
+}
+#seasonSelector.selected::after{
+	transform: rotateZ(90deg);
+}
+@keyframes load {
+	from{
+		transform: rotate(0deg)
+	}to{
+		transform: rotate(360deg)
+	}
+}
+
+#seasonList{
+	width: 60%;
+	border-bottom: var(--text) solid 1px;
+	transition: max-height 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+#seasonList.show{
+	max-height: 500px;
+}
+#seasonList>div:hover{
+	transition: background-color 0.2s ease;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+#mode{
+	margin: 5%;
+}
+#modeSelector{
+	width: 60%;
+}
+#modeList{
+	width: 60%;
+	border-bottom: var(--text) solid 1px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+}
+#modeList.show{
+	max-height: 500px;
+}
+#calcVal{
+	width: 40%;
+	margin: 5%;
+	background: none;
+	border: none;
+	outline: none;
+	text-align: center;
+	color: var(--text);
+	border-bottom: var(--text) solid 1px;
+}
+#calcVal.disable{
+	display: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#calcVal.shake{
+	animation: error ease 0.1s;
+}
+
+
+#search{
+	position: relative;
+	background: none;
+	border: none;
+	color: var(--text);
+	font-size: 1rem;
+	margin: 10%;
+	padding: 2.5%;
+}
+#search::before, #search::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	transition: width 0.5s ease;
+}
+#search::before{
+	border-top: var(--text) 1px solid;
+	top: 0;
+	left: 0;
+}
+#search::after{
+	border-bottom: var(--text) 1px solid;
+	bottom: 0;
+	right: 0;
+}
+#search:hover::before, #search:hover::after{
+	width: 0;
+}
