@@ -14,12 +14,18 @@ const median = arr => {
 };
 
 ;(async ()=>{
-    const apiData = await fetch(_api + location.search, {
-        method: 'GET',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded'
-		}
-    })
+    let apiData
+    try{
+        apiData = await fetch(_api + location.search, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    }catch(e){
+        alert("通信中にエラーが発生しました。再読込します。 " + e.message)
+        location.reload()
+    }
     const json = await apiData.json()
     if(json?.type !== "error"){
         createView(json)
